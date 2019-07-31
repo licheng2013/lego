@@ -5,7 +5,7 @@ spring:
     cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/licheng?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&serverTimezone=UTC
+    url: jdbc:mysql://74.82.192.211:3306/lego?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&serverTimezone=UTC
     username: root
     password: root
 mybatis:
