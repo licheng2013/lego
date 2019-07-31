@@ -1,2 +1,0 @@
-# lego
-springboot-demo

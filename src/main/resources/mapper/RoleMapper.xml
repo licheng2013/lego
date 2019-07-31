@@ -6,13 +6,22 @@
     <resultMap id="BaseResultMap" type="com.example.springBootDemo.model.Role">
         <id column="id" property="id"/>
         <result column="desc" property="desc"/>
+        <result column="code" property="code"/>
     </resultMap>
     
     <sql id="BaseList">
-        id, `desc`
+        id, `desc`, code
     </sql>
 
     <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-        select <include refid="BaseList"/> from sys_role where id = #{0}
+        select <include refid="BaseList"/>
+        from sys_role
+        where id = #{0}
+    </select>
+
+    <select id="selectByAdminId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select <include refid="BaseList"/>
+        from sys_role
+        where id in (select role_id from user_role where user_id = #{0})
     </select>
 </mapper>
