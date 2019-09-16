@@ -1,5 +1,8 @@
 package com.example.springBootDemo.enums;
 
+/**
+ * 返回码枚举类
+ */
 public enum CodeMessageEnum {
     OK(200, "操作成功"), ERROR(500, "操作失败"),;
 

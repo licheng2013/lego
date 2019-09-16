@@ -1,11 +1,21 @@
 package com.example.springBootDemo.dao;
 
 import com.example.springBootDemo.model.Role;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public interface RoleMapper {
-    Role selectById(Integer id);
+    int insert(Role record);
 
-    List<Role> selectByAdminId(Integer adminId);
+    int insertSelective(Role record);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int updateByPrimaryKey(Role record);
+
+    int updateByPrimaryKeySelective(Role record);
+
+    Role selectByPrimaryKey(Integer id);
 }

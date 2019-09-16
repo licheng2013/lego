@@ -1,21 +1,20 @@
 package com.example.springBootDemo.service;
 
-import com.example.springBootDemo.dao.AdminMapper;
 import com.example.springBootDemo.model.Admin;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class AdminService {
+public interface AdminService{
 
-    @Autowired
-    private AdminMapper dao;
+    Admin selectByPrimaryKey(Integer id);
 
-    public Admin selectById(Integer id){
-        return dao.selectById(id);
-    }
+    Admin selectByLoginName(String name);
 
-    public Admin selectByLoginName(String name){
-        return dao.selectByLoginName(name);
-    }
+    int insert(Admin record);
+
+    int insertSelective(Admin record);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int updateByPrimaryKey(Admin record);
+
+    int updateByPrimaryKeySelective(Admin record);
 }

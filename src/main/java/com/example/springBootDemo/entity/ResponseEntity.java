@@ -5,6 +5,9 @@ import com.example.springBootDemo.enums.CodeMessageEnum;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 返回响应实体类
+ */
 public class ResponseEntity {
     private Integer status;
     private Object data;

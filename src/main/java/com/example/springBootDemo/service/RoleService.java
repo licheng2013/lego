@@ -1,22 +1,17 @@
 package com.example.springBootDemo.service;
 
-import com.example.springBootDemo.dao.RoleMapper;
 import com.example.springBootDemo.model.Role;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
+public interface RoleService {
+    int insert(Role record);
 
-@Service
-public class RoleService {
-    @Autowired
-    private RoleMapper dao;
+    int insertSelective(Role record);
 
-    public Role selectById(Integer id){
-        return dao.selectById(id);
-    }
+    int deleteByPrimaryKey(Integer id);
 
-    public List<Role> selectByAdminId(Integer adminId) {
-        return dao.selectByAdminId(adminId);
-    }
+    int updateByPrimaryKey(Role record);
+
+    int updateByPrimaryKeySelective(Role record);
+
+    Role selectByPrimaryKey(Integer id);
 }
